@@ -35,17 +35,68 @@ async function pull(){
 }
 
 async function checkoutNewBranch(){
+    let newBranchResponse = null
     try{
-        await git.checkoutBranch('newBranch', 'master')
+        newBranchResponse = await git.checkoutBranch('newBranch3', 'master')
 
     }
     catch(e){
-        console.error(`Unable to checkout due to ${e}`)
+        console.error(`Unable to checkout to new branch due to ${e}`)
+    }
+    return newBranchResponse
+}
+
+async function checkout(branch){
+    let checkoutResponse = null
+    try{
+        console.log(`Checking out to existing branch ${branch}`)
+        checkoutResponse = await git.checkout(branch)
+    }
+    catch(e){
+        console.error(`Unable to checkout to existing branch due to ${e}`)
+    }
+    return checkoutResponse
+}
+
+async function addAll(){
+    try{
+        await git.add('.')
+    }
+    catch(e){
+        console.error(`Add failed due to ${e}`)
+    }
+}
+
+async function commit(){
+    try{
+        await git.commit('automated commit!')
+    }
+    catch(e){
+        console.error(`Commit failed due to ${e}`)
+
+    }
+}
+
+async function pushNoVerify(){
+    try{
+        await FileList.push(['--no-verify'])
+    }
+    catch(e){
+        console.error(`Unable to push --no-verify due to ${e}`)
     }
 }
 
 status()//.then(status => console.log('STATUS:', status));
-fetch().then(fetchResponse => console.log('FETCH:', fetchResponse));
-pull().then(pullResponse => console.log('PULL:',pullResponse))
-//checkoutNewBranch()
-//fetch().then(fetchResponse => console.log(fetchResponse));
+fetch()//.then(fetchResponse => console.log('FETCH:', fetchResponse));
+//pull()//.then(pullResponse => console.log('PULL:',pullResponse))
+//checkoutNewBranch().then(newBranchResponse => console.log('CHECKOUT -B:',newBranchResponse))
+checkout('newBranch').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
+status().then(status => console.log('STATUS:', status));
+addAll()
+commit()
+pushNoVerify()
+
+// checkout('master').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
+// status().then(status => console.log('STATUS:', status));
+
+// fetch().then(fetchResponse => console.log(fetchResponse));

@@ -86,15 +86,15 @@ async function pushNoVerify(){
     }
 }
 
-status()//.then(status => console.log('STATUS:', status));
-fetch()//.then(fetchResponse => console.log('FETCH:', fetchResponse));
+//status()//.then(status => console.log('STATUS:', status));
+//fetch()//.then(fetchResponse => console.log('FETCH:', fetchResponse));
 //pull()//.then(pullResponse => console.log('PULL:',pullResponse))
 //checkoutNewBranch().then(newBranchResponse => console.log('CHECKOUT -B:',newBranchResponse))
-checkout('newBranch').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
+//checkout('newBranch').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
 status().then(status => console.log('STATUS:', status));
 addAll()
-commit()
-pushNoVerify()
+// commit()
+// pushNoVerify()
 
 // checkout('master').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
 // status().then(status => console.log('STATUS:', status));

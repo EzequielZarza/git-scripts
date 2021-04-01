@@ -93,7 +93,7 @@ async function pushNoVerify(){
 //checkout('newBranch').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
 status().then(status => console.log('STATUS:', status));
 addAll()
-// commit()
+commit()
 // pushNoVerify()
 
 // checkout('master').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))

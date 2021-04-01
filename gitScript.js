@@ -100,7 +100,7 @@ status().then(status => console.log('STATUS:', status));
 addAll()
 //commit()
 pushNoVerify()
-checkout('master')
+//checkout('master')
 
 // checkout('master').then(existingBranchResponse => console.log('CHECKOUT:',existingBranchResponse))
 // status().then(status => console.log('STATUS:', status));

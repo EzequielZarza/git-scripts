@@ -69,7 +69,7 @@ async function addAll(){
 
 async function commit(){
     try{
-        await git.commit('automated commit!')
+        await git.commit("automated commit!")
     }
     catch(e){
         console.error(`Commit failed due to ${e}`)

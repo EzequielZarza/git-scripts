@@ -79,7 +79,7 @@ async function commit(){
 
 async function pushNoVerify(){
     try{
-        await FileList.push(['--no-verify'])
+        await git.push(['--no-verify'])
     }
     catch(e){
         console.error(`Unable to push --no-verify due to ${e}`)

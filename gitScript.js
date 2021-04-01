@@ -79,7 +79,7 @@ async function commit(){
 
 async function pushNoVerify(){
     try{
-        await git.push(['--no-verify'])
+        await git.push(['--set-upstream','--no-verify'])
     }
     catch(e){
         console.error(`Unable to push --no-verify due to ${e}`)
